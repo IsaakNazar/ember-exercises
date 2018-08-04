@@ -10,5 +10,13 @@ export default Ember.Route.extend({
       {id: 'netflix'},
       {id: 'facebook'}
     ]
-  }
+	},
+	favorites: Ember.inject.service(),
+	
+	actions: {
+		showItems(value){
+			this.get('favorites.items').pushObject(value)
+			console.log(this.get('favorites.items').join(", "))
+		}
+	}
 });

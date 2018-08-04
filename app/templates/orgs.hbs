@@ -3,7 +3,7 @@
 <ul>
   {{#each model as |org|}}
     <li>{{link-to org.id 'org' org.id}}</li>
-
+		<span {{action "showItems" org.id}}>Click it</span>
   {{/each}}
 
 </ul>
