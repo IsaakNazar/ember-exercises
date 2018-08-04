@@ -1,15 +1,20 @@
 import Ember from 'ember';
+import { resolve, reject } from 'rsvp';
 
 export default Ember.Route.extend({
   model() {
-    return [
-      {id: 'emberjs'},
-      {id: 'ember-cli'},
-      {id: 'microsoft'},
-      {id: 'yahoo'},
-      {id: 'netflix'},
-      {id: 'facebook'}
-    ]
+		return new Ember.RSVP.Promise((resolve, reject) => {
+			Ember.run.later(() => {
+				resolve([
+					{id: 'emberjs'},
+					{id: 'ember-cli'},
+					{id: 'microsoft'},
+					{id: 'yahoo'},
+					{id: 'netflix'},
+					{id: 'facebook'}
+				])
+			}, 3000)
+		})
 	},
 	favorites: Ember.inject.service(),
 	
