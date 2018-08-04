@@ -1,2 +1,8 @@
 <h5>Issues</h5>
+<ul>
+	{{#each content as |issue|}}
+	{{log issue}}
+		<li>{{issue.title}}</li>
+	{{/each}}
+</ul>
 {{outlet}}

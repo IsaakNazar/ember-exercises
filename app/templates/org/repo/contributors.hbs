@@ -1,2 +1,8 @@
 <h5>Contributors</h5>
+
+<ul>
+	{{#each content as |contributor|}}
+		<li>{{contributor.login}}</li>
+	{{/each}}
+</ul>
 {{outlet}}

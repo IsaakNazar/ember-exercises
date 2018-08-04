@@ -1,10 +1,5 @@
 {{link-to 'Back to list of orgs' 'orgs'}}
 
-<h3>Facebook</h3>
-<button {{action 'addToRecords' 'two'}}>Click</button>
-<ul>
-	{{#each records as |record|}}
-		<li>{{record.id}}</li>
-	{{/each}}
-</ul>
+{{log content}}
+<h4>{{content.name}} <a href={{content.html_url}} target="_blank">Github</a></h4>
 {{outlet}}
