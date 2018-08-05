@@ -19,9 +19,14 @@ export default Ember.Route.extend({
 	favorites: Ember.inject.service(),
 	
 	actions: {
-		showItems(value){
+		showFavoriteItems(value){
 			this.get('favorites.items').pushObject(value)
-			console.log(this.get('favorites.items').join(", "))
+			console.log(this.get('favorites.items')
+			.map(a => a.id)
+			.join(", "))
+		},
+		linksToggled() {
+			console.log('TOggled');
 		}
 	}
 });

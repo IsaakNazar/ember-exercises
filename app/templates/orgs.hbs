@@ -1,11 +1,25 @@
 <h1>Orgs</h1>
 
 <ul>
-  {{#each model as |org|}}
-    <li>{{link-to org.id 'org' org.id}}</li>
-		<span {{action "showItems" org.id}}>Click it</span>
+  {{#each model as |o|}}
+		{{github-org 
+			org=o
+			on-fav-clicked='showFavoriteItems'}}
+    
   {{/each}}
 
 </ul>
+
+{{social-info
+		name="Nazar Isakov"
+		github="isaaknazar"
+		twitter="nazarisaak"
+		on-links-toggle="linksToggled"}}
+
+{{social-info
+		name="Nazar Isakov"
+		twitter="nazarisaak"}}		
+
+{{outlet}}
 
 
