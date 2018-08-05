@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 					{id: 'netflix'},
 					{id: 'facebook'}
 				])
-			}, 3000)
+			}, 2000)
 		})
 	},
 	favorites: Ember.inject.service(),
