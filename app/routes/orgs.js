@@ -2,7 +2,20 @@ import Ember from 'ember';
 import { resolve, reject } from 'rsvp';
 
 export default Ember.Route.extend({
-  model() {
+  
+	favorites: Ember.inject.service(),
+	
+	actions: {
+		showFavoriteItems(org){
+			if (this.get('favorites.items').indexOf('org') < 0) {
+				this.get('favorites').favoriteItem(org)
+			} else {
+				this.get('favorites').unfavoriteItem(org)
+			}
+			
+		}
+	},
+	model() {
 		return new Ember.RSVP.Promise((resolve, reject) => {
 			Ember.run.later(() => {
 				resolve([
@@ -15,18 +28,5 @@ export default Ember.Route.extend({
 				])
 			}, 2000)
 		})
-	},
-	favorites: Ember.inject.service(),
-	
-	actions: {
-		showFavoriteItems(value){
-			this.get('favorites.items').pushObject(value)
-			console.log(this.get('favorites.items')
-			.map(a => a.id)
-			.join(", "))
-		},
-		linksToggled() {
-			console.log('TOggled');
-		}
 	}
 });

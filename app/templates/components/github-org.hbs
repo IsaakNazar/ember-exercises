@@ -1,7 +1,7 @@
 {{yield}}
 
 <span {{action "favWasClicked"}}>
-	Click it
+	{{unless isFavorited 'Favorite' 'Unfavorite'}}
 </span>
 {{link-to org.id 'org' org.id}}
 

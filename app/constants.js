@@ -1,3 +1,3 @@
 export default {
-	Token: 'd7bbe66c63cfbc22d9d6154dff0fbc19bc2149a7'
+	Token: 'fe7f411e5093a38ee3745f7389dbf4ab10c48608'
 }
